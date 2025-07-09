@@ -16,9 +16,18 @@ const vowels = "aeiou";
 
 let pigLatinWords = [];
 
-if (vowels.includes(firstLetter)) {
+/*if (vowels.includes(firstLetter)) {
   pigLatinWords.push(words[0] + "way");
 } else {
-  pigLatinWords.push(words.slice(0) + word[0] + "ay");
+  pigLatinWords.push(word.slice(0) + word[0] + "ay");
+}*/
+
+for (let word of words) {
+  let firstLetter = word[0].toLowerCase();
+  if (vowels.includes(firstLetter)) {
+    pigLatinWords.push(word + "way");
+  } else {
+    pigLatinWords.push(word.slice(1) + word[0] + "ay");
+  }
 }
-console.log(pigLatinWords);
+console.log(pigLatinWords.join(" "));
